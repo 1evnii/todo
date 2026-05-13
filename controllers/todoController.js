@@ -42,7 +42,8 @@ export const createTodo = async (req, res) => {
 
 export const getTodoById = async (req, res) => {
   try {
-    const todo = await TodoModel.findById(req.params.id);
+    console.log(req.params.id)
+    const todo = await TodoModel.find({userId: req.params.id});
 
     if (!todo) {
       return res.status(404).json({ message: "Not found" });
