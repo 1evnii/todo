@@ -17,7 +17,7 @@ app.use("/api/users", userRoute);
 app.use("/api/todos", todoRoute);
 app.use("/api/refresh", refreshRoute);
 
-mongoose.connect("mongodb://host.docker.internal:27017/todo")
+mongoose.connect("mongodb://127.0.0.1:27017/todo")
 .then(() => {
     console.log("Connected to database!");
     const port = process.env.PORT || 3000;
